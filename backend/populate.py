@@ -5,8 +5,8 @@ import os
 from opensearchpy import OpenSearch, helpers
 from sentence_transformers import SentenceTransformer
 
-EXCEL_FILE = '/Users/choi/Workspace/gov_standard/공공데이터 공통표준(2025.11월).xlsx'
-SQLITE_DB = 'standard_dict.db'
+EXCEL_FILE = os.path.join(os.path.dirname(__file__), '..', '공공데이터 공통표준(2025.11월).xlsx')
+SQLITE_DB = os.path.join(os.path.dirname(__file__), 'standard_dict.db')
 OPENSEARCH_HOST = os.environ.get('OPENSEARCH_HOST', 'localhost')
 OPENSEARCH_PORT = int(os.environ.get('OPENSEARCH_PORT', 9200))
 INDEX_NAME = 'standard_dict_vectors'

@@ -19,7 +19,7 @@ app.add_middleware(
 OPENSEARCH_HOST = os.environ.get('OPENSEARCH_HOST', 'localhost')
 OPENSEARCH_PORT = int(os.environ.get('OPENSEARCH_PORT', 9200))
 INDEX_NAME = 'standard_dict_vectors'
-DB_PATH = '/Users/choi/Workspace/gov_standard/standard-db-manager/backend/standard_dict.db'
+DB_PATH = os.path.join(os.path.dirname(__file__), 'standard_dict.db')
 
 print("Loading embedding model...")
 model = SentenceTransformer('jhgan/ko-sroberta-multitask')
