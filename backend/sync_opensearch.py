@@ -33,7 +33,10 @@ def sync():
         use_ssl=False,
         verify_certs=False,
         ssl_assert_hostname=False,
-        ssl_show_warn=False
+        ssl_show_warn=False,
+        timeout=60,
+        max_retries=3,
+        retry_on_timeout=True
     )
     
     if client.indices.exists(index=INDEX_NAME):
