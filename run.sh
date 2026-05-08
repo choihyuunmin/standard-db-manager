@@ -7,8 +7,8 @@
 # 원격 OpenSearch 서버를 사용하려면 아래 두 환경변수를 설정하고 주석을 해제하거나,
 # 스크립트 실행 시 환경변수로 전달하세요.
 # 예: OPENSEARCH_HOST=192.168.1.10 OPENSEARCH_PORT=9200 ./run.sh
-# export OPENSEARCH_HOST="your-remote-host-ip"
-# export OPENSEARCH_PORT="9200"
+export OPENSEARCH_HOST="192.168.22.93"
+export OPENSEARCH_PORT="9200"
 
 echo "========================================"
 echo "🚀 Starting GovData Standard DB Manager"
@@ -28,11 +28,8 @@ echo "========================================"
 # 2. 백엔드 실행 (FastAPI)
 echo "🐍 백엔드 서버 (FastAPI) 시작 중..."
 cd backend
-# 가상환경이 존재하면 활성화
-if [ -f ".venv/bin/activate" ]; then
-    source .venv/bin/activate
-fi
-python main.py &
+# python 환경 대신 uv를 사용하여 실행
+uv run main.py &
 BACKEND_PID=$!
 cd ..
 

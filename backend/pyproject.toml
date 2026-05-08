@@ -1,0 +1,14 @@
+[project]
+name = "standard-db-manager-backend"
+version = "0.1.0"
+description = "Backend for GovData Standard DB Manager"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "opensearch-py",
+    "sentence-transformers",
+    "pandas",
+    "openpyxl"
+]
